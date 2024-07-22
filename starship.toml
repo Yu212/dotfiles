@@ -1,0 +1,38 @@
+format = """
+[\ue0be](fg:#cbc6cc)\
+[\ue0b8](fg:#cbc6cc bg:#fe9954)\
+[\ue0b8](fg:#fe9954 bg:#61bf99)\
+[\ue0b8](fg:#61bf99 bg:#6292e9)\
+[\ue0b8](fg:#6292e9 bg:#fb5458)\
+[\ue0b8](fg:#fb5458 bg:#95caee)\
+[\ue0b8](fg:#95caee bg:#fdd162)\
+[\ue0b8](fg:#fdd162 bg:#8c67aa)\
+[\ue0b8](fg:#8c67aa bg:#e08696)\
+[\ue0b8](fg:#e08696 bg:#444444)\
+$directory\
+[\ue0b0 ](fg:#444444)
+"""
+
+right_format = "$all([\ue0b2](fg:#444444)[ ](bg:#444444)$python$cmd_duration[ ](bg:#444444))"
+
+[directory]
+style = "fg:#ffffff bg:#444444"
+format = "[ $path ]($style)"
+truncation_symbol = "\u2026"
+
+[character]
+disabled = true
+
+[battery]
+disabled = true
+
+[cmd_duration]
+format = "[$duration ](fg:#fdd162 bg:#444444)"
+disabled = false
+
+[python]
+symbol = "\ue235 "
+format = "[$symbol$virtualenv ](fg:#6292e9 bg:#444444)"
+detect_extensions = []
+detect_files = []
+

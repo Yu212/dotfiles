@@ -1,0 +1,9 @@
+prompt=
+allow_images=true
+allow_markup=true
+width=30%
+lines=10
+image_size=24
+hide_scroll=true
+key_expand=Tab
+
