@@ -1,0 +1,14 @@
+daemonize
+color=000000
+font=HackNerdFont
+font-size=14
+line-uses-ring
+separator-color=00000000
+key-hl-color=6bd4aa
+inside-color=61bf99
+ring-color=57ab89
+inside-clear-color=fe9954
+ring-clear-color=e4894b
+inside-ver-color=6292e9
+ring-ver-color=5883d1
+
