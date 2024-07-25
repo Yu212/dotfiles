@@ -1,7 +1,0 @@
-[tools]
-python = "3.12.4"
-java = "17.0.2"
-usage = "latest"
-kotlin = "1.8.20"
-rust = "latest"
-node = "latest"

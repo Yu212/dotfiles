@@ -35,7 +35,7 @@ function mkcd() {
 }
 
 function select-history() {
-    BUFFER=$(history -n -r 1 | fzf --query "$LBUFFER" --height 50% --reverse)
+    BUFFER=$(history -n -r 1 | fzf +s --query "$LBUFFER" --height 50% --reverse)
     CURSOR=$#BUFFER
     zle reset-prompt
 }

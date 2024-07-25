@@ -18,7 +18,8 @@ right_format = "$all([\ue0b2](fg:#444444)[ ](bg:#444444)$python$cmd_duration[ ](
 [directory]
 style = "fg:#ffffff bg:#444444"
 format = "[ $path ]($style)"
-truncation_symbol = "\u2026"
+truncation_symbol = "\u2026/"
+truncate_to_repo=false
 
 [character]
 disabled = true

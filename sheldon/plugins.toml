@@ -18,9 +18,6 @@ shell = "zsh"
 github = "romkatv/zsh-defer"
 apply = ["source"]
 
-[plugins.starship]
-inline = 'eval "$(starship init zsh)"'
-
 [plugins.mise]
 inline = 'eval "$(mise activate zsh)"'
 
@@ -37,6 +34,9 @@ apply = ["defer"]
 [plugins.zsh-syntax-highlighting]
 github = "zsh-users/zsh-syntax-highlighting"
 apply = ["defer"]
+
+[plugins.starship]
+inline = 'eval "$(starship init zsh)"'
 
 [templates]
 defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks?.post | nl }}"
