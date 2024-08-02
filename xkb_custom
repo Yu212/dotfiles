@@ -1,0 +1,11 @@
+xkb_symbols "custom" {
+    include "jp"
+    key <CAPS> { [ Hyper_L, Hyper_L ] };
+    key <HYPR> { [ Hyper_R, Hyper_L ] };
+    modifier_map Mod3 { <HYPR> };
+    replace key <HOME> { [Prior] };
+    replace key <END> { [Next] };
+    replace key <PGUP> { [Home] };
+    replace key <PGDN> { [End] };
+};
+

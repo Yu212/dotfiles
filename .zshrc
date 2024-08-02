@@ -35,7 +35,7 @@ function mkcd() {
 }
 
 function select-history() {
-    BUFFER=$(history -n -r 1 | fzf +s --query "$LBUFFER" --height 50% --reverse)
+    BUFFER=$(history -n -r 1 | fzf --tiebreak=index --query "$LBUFFER" --height 50% --reverse)
     CURSOR=$#BUFFER
     zle reset-prompt
 }
@@ -46,4 +46,5 @@ alias la='exa -al --icons'
 alias ls='exa'
 alias lt='exa -T -L 3 --icons'
 alias clip='copyq copy -'
+alias cat='bat'
 
