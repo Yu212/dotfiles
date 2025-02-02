@@ -27,10 +27,10 @@ output * bg wallpaper.png fill
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
-exec swayidle -w \
-        timeout 1200 'swaylock -f -c 000000' \
-        timeout 6000 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-        before-sleep 'swaylock -f -c 000000'
+#exec swayidle -w \
+#        timeout 1200 'swaylock -f -c 000000' \
+#        timeout 6000 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+#        before-sleep 'swaylock -f -c 000000'
 
 bindsym $mod+l exec swaylock -f -c 000000
 
@@ -42,19 +42,23 @@ exec copyq
 bindsym Mod3+SEMICOLON exec copyq toggle
 
 bindsym Print exec grim - | wl-copy
-bindsym Ctrl+Print exec slurp | grim -g - - | wl-copy
+bindsym Alt+Print exec slurp | grim -g - - | wl-copy
 bindsym Shift+Print exec swaymsg -t get_tree | \
         jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | \
         grim -g - - | wl-copy
 bindsym $mod+Print exec grim "$HOME/screenshots/$(date +%Y-%m-%d_%H:%M:%S).png"
-bindsym $mod+Ctrl+Print exec slurp | grim -g - "$HOME/screenshots/$(date +%Y-%m-%d_%H:%M:%S).png"
+bindsym $mod+Alt+Print exec slurp | grim -g - "$HOME/screenshots/$(date +%Y-%m-%d_%H:%M:%S).png"
 bindsym $mod+Shift+Print exec swaymsg -t get_tree | \
         jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | \
         grim -g - "$HOME/screenshots/$(date +%Y-%m-%d_%H:%M:%S).png"
 
 input type:keyboard {
-    xkb_layout "custom"
+    xkb_layout "us+capslock(hyper)"
     repeat_delay 200
+}
+
+input "1:1:AT_Translated_Set_2_keyboard" {
+    xkb_file "~/.xkb/keymap/custom"
 }
 
 input type:touchpad {
@@ -125,7 +129,6 @@ input "1133:16500:Logitech_G304" {
     bindsym Mod3+7 workspace number 7
     bindsym Mod3+8 workspace number 8
     bindsym Mod3+9 workspace number 9
-    bindsym Mod3+0 workspace number 10
     # Move focused container to workspace
     bindsym $mod+1 move container to workspace number 1
     bindsym $mod+2 move container to workspace number 2
@@ -136,7 +139,17 @@ input "1133:16500:Logitech_G304" {
     bindsym $mod+7 move container to workspace number 7
     bindsym $mod+8 move container to workspace number 8
     bindsym $mod+9 move container to workspace number 9
-    bindsym $mod+0 move container to workspace number 10
+
+    bindsym $mod+Mod3+1 move container to workspace number 1, workspace number 1
+    bindsym $mod+Mod3+2 move container to workspace number 2, workspace number 2
+    bindsym $mod+Mod3+3 move container to workspace number 3, workspace number 3
+    bindsym $mod+Mod3+4 move container to workspace number 4, workspace number 4
+    bindsym $mod+Mod3+5 move container to workspace number 5, workspace number 5
+    bindsym $mod+Mod3+6 move container to workspace number 6, workspace number 6
+    bindsym $mod+Mod3+7 move container to workspace number 7, workspace number 7
+    bindsym $mod+Mod3+8 move container to workspace number 8, workspace number 8
+    bindsym $mod+Mod3+9 move container to workspace number 9, workspace number 9
+
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 #
@@ -159,6 +172,8 @@ input "1133:16500:Logitech_G304" {
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
+
+    bindsym $mod+s sticky toggle
 #
 # Scratchpad:
 #
@@ -166,7 +181,8 @@ input "1133:16500:Logitech_G304" {
     # You can send windows there and get them back later.
 
     # Move the currently focused window to the scratchpad
-    bindsym $mod+Shift+minus move scratchpad
+#    bindsym $mod+Shift+minus move scratchpad
+    bindsym $mod+Shift+minus floating enable, resize set 1800 1100, move scratchpad, scratchpad show
 
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
@@ -196,6 +212,11 @@ mode "resize" {
     bindsym Up resize shrink height 10px
     bindsym Right resize grow width 10px
 
+    bindsym Shift+Left resize shrink width 100px
+    bindsym Shift+Down resize grow height 100px
+    bindsym Shift+Up resize shrink height 100px
+    bindsym Shift+Right resize grow width 100px
+
     # Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -210,12 +231,6 @@ bindsym $mod+r mode "resize"
 bar {
     position top
     swaybar_command waybar
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
 }
 
 default_border pixel 2
@@ -224,3 +239,8 @@ for_window [app_id="copyq"] floating enable, resize set 600 600
 for_window [app_id="thunar"] floating enable
 
 include /etc/sway/config.d/*
+
+output 'Philips Consumer Electronics Company PHL 278E1 0x0000037B' {
+    mode 2560x1440
+}
+

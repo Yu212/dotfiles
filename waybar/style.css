@@ -104,3 +104,7 @@ window#waybar {
     -gtk-icon-effect: highlight;
 }
 
+menu label {
+    color: @black;
+}
+

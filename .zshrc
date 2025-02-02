@@ -13,6 +13,7 @@ setopt extended_history
 setopt hist_no_store
 setopt print_eight_bit
 setopt share_history
+setopt pushd_ignore_dups
 
 bindkey '^J' self-insert
 bindkey '^I' expand-or-complete-prefix
@@ -34,6 +35,9 @@ function mkcd() {
     mkdir -p -- "$1" && cd -P -- "$1"
 }
 
+. ~/PycharmProjects/cm/cm-completion.zsh
+alias cm="source ~/PycharmProjects/cm/cm.zsh"
+
 function select-history() {
     BUFFER=$(history -n -r 1 | fzf --tiebreak=index --query "$LBUFFER" --height 50% --reverse)
     CURSOR=$#BUFFER
@@ -47,4 +51,5 @@ alias ls='exa'
 alias lt='exa -T -L 3 --icons'
 alias clip='copyq copy -'
 alias cat='bat'
+alias open='thunar'
 

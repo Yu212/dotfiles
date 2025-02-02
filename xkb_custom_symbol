@@ -1,0 +1,15 @@
+xkb_symbols "custom" {
+    include "jp+capslock(hyper)"
+    replace key <HOME> { [Prior] };
+    replace key <END> { [Next] };
+    replace key <PGUP> { [Home] };
+    replace key <PGDN> { [End] };
+
+    key <AC06> { type = "THREE_LEVEL_HYPER", [ h, H, Left ] };
+    key <AC07> { type = "THREE_LEVEL_HYPER", [ j, J, Down ] };
+    key <AC08> { type = "THREE_LEVEL_HYPER", [ k, K, Up ] };
+    key <AC09> { type = "THREE_LEVEL_HYPER", [ l, L, Right ] };
+    key <AD07> { type = "THREE_LEVEL_HYPER", [ u, U, Home ] };
+    key <AD08> { type = "THREE_LEVEL_HYPER", [ i, I, End ] };
+};
+
