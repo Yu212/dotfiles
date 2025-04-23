@@ -1,0 +1,6 @@
+return {
+    view = {
+        side = "right"
+    }
+}
+

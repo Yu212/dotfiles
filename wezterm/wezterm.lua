@@ -20,6 +20,9 @@ return {
         {key = "w", mods = "CTRL|SHIFT", action = act.CloseCurrentTab {confirm = false}},
         {key = "t", mods = "CTRL", action = act.SplitHorizontal {cwd = "~"}},
         {key = "t", mods = "CTRL|SHIFT", action = act.SpawnCommandInNewTab {cwd = "~"}},
+        {key = "-", mods = "SUPER", action = act.DisableDefaultAssignment },
+        {key = "[", mods = "SUPER", action = act.ActivateTabRelative(-1) },
+        {key = "]", mods = "SUPER", action = act.ActivateTabRelative(1) },
     },
     colors = require("colors")
 }

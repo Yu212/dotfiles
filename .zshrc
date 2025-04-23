@@ -37,6 +37,7 @@ function mkcd() {
 
 . ~/PycharmProjects/cm/cm-completion.zsh
 alias cm="source ~/PycharmProjects/cm/cm.zsh"
+alias dh="dreamhack"
 
 function select-history() {
     BUFFER=$(history -n -r 1 | fzf --tiebreak=index --query "$LBUFFER" --height 50% --reverse)
@@ -53,3 +54,13 @@ alias clip='copyq copy -'
 alias cat='bat'
 alias open='thunar'
 
+
+. "$HOME/.local/share/../bin/env"
+
+# pnpm
+export PNPM_HOME="/home/yu212/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

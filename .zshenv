@@ -7,3 +7,7 @@ export XMODIFIERS=@im=fcitx
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
+
+export PATH="$PATH:/home/yu212/.config/.foundry/bin"
+export CTF_HOME="/home/yu212/PycharmProjects/ctf"
+

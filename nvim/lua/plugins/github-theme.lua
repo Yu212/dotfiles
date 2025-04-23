@@ -1,0 +1,6 @@
+return {
+    options = {
+        transparent = true
+    }
+}
+

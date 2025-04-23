@@ -9,7 +9,8 @@ xkb_symbols "custom" {
     key <AC07> { type = "THREE_LEVEL_HYPER", [ j, J, Down ] };
     key <AC08> { type = "THREE_LEVEL_HYPER", [ k, K, Up ] };
     key <AC09> { type = "THREE_LEVEL_HYPER", [ l, L, Right ] };
-    key <AD07> { type = "THREE_LEVEL_HYPER", [ u, U, Home ] };
-    key <AD08> { type = "THREE_LEVEL_HYPER", [ i, I, End ] };
+    key <AD08> { type = "THREE_LEVEL_HYPER", [ i, I, Escape ] };
+    key <AB06> { type = "THREE_LEVEL_HYPER", [ n, N, Home ] };
+    key <AB07> { type = "THREE_LEVEL_HYPER", [ m, M, End ] };
 };
 
